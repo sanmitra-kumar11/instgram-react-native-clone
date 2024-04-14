@@ -42,6 +42,10 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
     justifyContent: "space-around",
+    position: "absolute",
+    left: 0,
+    bottom: 0,
+    right: 0,
   },
   icons: {
     width: 30,

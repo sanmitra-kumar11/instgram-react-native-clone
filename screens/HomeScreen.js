@@ -1,18 +1,22 @@
-import { View, Text } from "react-native";
+import { View, Text, ScrollView } from "react-native";
 import React from "react";
 import { Colors } from "react-native/Libraries/NewAppScreen";
 import Header from "../components/HomeScreen/Header";
 import Footer from "../components/HomeScreen/Footer";
 import Post from "../components/HomeScreen/Post";
 import Stories from "../components/HomeScreen/Stories";
+import { POSTS } from "../data/posts";
 
 const HomeScreen = () => {
   return (
-    <View>
-      <Header />
-      <Stories />
-      <Post />
-      <Footer />
+    <View style={{ alignContent: "space-between" }}>
+      <ScrollView>
+        <Header />
+        <Stories />
+        <Post />
+      </ScrollView>
+
+      {/* <Footer /> */}
     </View>
   );
 };
