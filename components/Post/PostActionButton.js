@@ -1,0 +1,118 @@
+import { View, Text, Image, StyleSheet, TouchableOpacity } from "react-native";
+import React from "react";
+
+const PostActionButton = ({ post }) => {
+  let formatedLikesCount = post.likesCount;
+  let formatedCommentsCount = post.commentsCount;
+  let formatedSharesCount = post.sharesCount;
+
+  if (post.likesCount > 10000 && post.likesCount < 100000) {
+    formatedLikesCount = post.likesCount / 1000;
+    formatedLikesCount = formatedLikesCount.toPrecision(3);
+    formatedLikesCount = formatedLikesCount.concat(" k");
+  } else if (post.likesCount > 100000) {
+    formatedLikesCount = post.likesCount / 1000;
+    formatedLikesCount = formatedLikesCount.toPrecision(4).endsWith(0)
+      ? formatedLikesCount.toPrecision(3)
+      : formatedLikesCount.toPrecision(4);
+    formatedLikesCount = formatedLikesCount.concat(" k");
+  }
+
+  if (post.commentsCount > 10000 && post.commentsCount < 100000) {
+    formatedCommentsCount = post.commentsCount / 1000;
+    formatedCommentsCount = formatedCommentsCount.toPrecision(3);
+    formatedCommentsCount = formatedCommentsCount.concat(" k");
+  } else if (post.commentsCount > 100000) {
+    formatedCommentsCount = post.commentsCount / 1000;
+    formatedCommentsCount = formatedCommentsCount.toPrecision(4).endsWith(0)
+      ? formatedCommentsCount.toPrecision(3)
+      : formatedCommentsCount.toPrecision(4);
+    formatedCommentsCount = formatedCommentsCount.concat(" k");
+  }
+
+  if (post.sharesCount > 10000 && post.sharesCount < 100000) {
+    formatedSharesCount = post.sharesCount / 1000;
+    formatedSharesCount = formatedSharesCount.toPrecision(3);
+    formatedSharesCount = formatedSharesCount.concat(" k");
+  } else if (post.sharesCount > 100000) {
+    formatedSharesCount = post.sharesCount / 1000;
+    formatedSharesCount = formatedSharesCount.toPrecision(4).endsWith(0)
+      ? formatedSharesCount.toPrecision(3)
+      : formatedSharesCount.toPrecision(4);
+    formatedSharesCount = formatedSharesCount.concat(" k");
+  }
+
+  return (
+    <View style={styles.container}>
+      <View style={styles.iconsOuterContainer}>
+        <View style={styles.iconsInnerContainer}>
+          <TouchableOpacity>
+            <Image
+              source={require("../../assets/icons/icons-like-outline-2.png")}
+              style={styles.icons}
+            />
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Text style={styles.counts}>{formatedLikesCount}</Text>
+          </TouchableOpacity>
+        </View>
+        <View>
+          <TouchableOpacity style={styles.iconsInnerContainer}>
+            <Image
+              source={require("../../assets/icons/icons-comment-outline.png")}
+              style={styles.icons}
+            />
+            <Text style={styles.counts}>{formatedCommentsCount}</Text>
+          </TouchableOpacity>
+        </View>
+        <View>
+          <TouchableOpacity style={styles.iconsInnerContainer}>
+            <Image
+              source={require("../../assets/icons/icons-share-outline.png")}
+              style={styles.icons}
+            />
+            <Text style={styles.counts}>{formatedSharesCount}</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
+      <View>
+        <TouchableOpacity>
+          <Image
+            source={require("../../assets/icons/icons-save-outline.png")}
+            style={styles.icons}
+          />
+        </TouchableOpacity>
+      </View>
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flexDirection: "row",
+    marginTop: 15,
+    justifyContent: "space-between",
+    marginRight: 15,
+  },
+  iconsOuterContainer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+  iconsInnerContainer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+  icons: {
+    width: 20,
+    height: 20,
+    marginLeft: 15,
+  },
+  counts: {
+    marginLeft: 5,
+    fontWeight: "bold",
+  },
+});
+
+export default PostActionButton;

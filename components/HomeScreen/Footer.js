@@ -1,5 +1,6 @@
 import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
 import React from "react";
+import { Divider } from "react-native-elements";
 
 const Footer = () => {
   return (
@@ -46,6 +47,10 @@ const styles = StyleSheet.create({
     left: 0,
     bottom: 0,
     right: 0,
+    backgroundColor: "white",
+    paddingTop: 12,
+    borderColor: "#f0eded",
+    borderTopWidth: 0.5,
   },
   icons: {
     width: 30,

@@ -11,7 +11,6 @@ import { USERS } from "../../data/users";
 import { LinearGradient } from "expo-linear-gradient";
 
 const Stories = () => {
-  console.log(USERS);
   return (
     <View style={styles.container}>
       <ScrollView
@@ -158,6 +157,9 @@ const Stories = () => {
 const styles = StyleSheet.create({
   container: {
     marginBottom: 13,
+    borderColor: "#f0eded",
+    paddingBottom: 10,
+    borderBottomWidth: 0.5,
   },
   stories: {
     width: 87,

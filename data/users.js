@@ -2,17 +2,17 @@ export const USERS = [
   {
     userId: 1,
     userName: "sanmitra.kumar",
-    profilePhoto: "profile-photo.jpeg",
+    profilePhoto: require("../assets/photos/profilePhotos/profile-photo.jpeg"),
   },
   {
     userId: 2,
     userName: "indranil_kumar_",
-    profilePhoto: "profile-photo2.jpeg",
+    profilePhoto: require("../assets/photos/profilePhotos/profile-photo2.jpeg"),
   },
   {
     userId: 3,
     userName: "wanderwithsky123456",
-    profilePhoto: "profile-photo3.jpeg",
+    profilePhoto: require("../assets/photos/profilePhotos/profile-photo3.jpeg"),
   },
   {
     userId: 4,

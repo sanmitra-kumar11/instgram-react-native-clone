@@ -12,7 +12,7 @@ const Header = () => {
           />
           <Image
             source={require("../../assets/icons/icons-expand-arrow.png")}
-            style={styles.logoExpand}
+            style={styles.logoDropdown}
           />
         </View>
       </TouchableOpacity>
@@ -23,7 +23,7 @@ const Header = () => {
             <Text style={styles.notificationBadgeIcon}>.</Text>
           </View>
           <Image
-            source={require("../../assets/icons/icons-like.png")}
+            source={require("../../assets/icons/icons-notification.png")}
             style={styles.icons}
           />
         </TouchableOpacity>
@@ -46,14 +46,15 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    marginHorizontal: 20,
+    marginLeft: 20,
+    marginRight: 15,
   },
   logo: {
     width: 100,
     height: 50,
     resizeMode: "contain",
   },
-  logoExpand: {
+  logoDropdown: {
     width: 30,
     height: 15,
     resizeMode: "contain",
@@ -62,7 +63,7 @@ const styles = StyleSheet.create({
   icons: {
     width: 25,
     height: 25,
-    marginLeft: 10,
+    marginLeft: 25,
   },
   iconsContainer: {
     flexDirection: "row",
@@ -70,30 +71,33 @@ const styles = StyleSheet.create({
   messageBadge: {
     backgroundColor: "#FF3250",
     position: "absolute",
-    left: 20,
+    left: 25,
     bottom: 15,
-    width: 25,
-    height: 23,
-    borderRadius: 25,
+    width: 18,
+    height: 18,
+    borderRadius: 50,
     alignItems: "center",
     justifyContent: "center",
     zIndex: 100,
+    marginLeft: 15,
   },
   messageBadgeText: {
     color: "white",
-    fontWeight: 800,
+    fontWeight: "bold",
+    fontSize: 10,
   },
   notificationBadge: {
     backgroundColor: "#FF3250",
     position: "absolute",
-    left: 26,
-    bottom: 15,
-    width: 10,
-    height: 10,
+    left: 27,
+    bottom: 17,
+    width: 8,
+    height: 8,
     borderRadius: 25,
     alignItems: "center",
     justifyContent: "center",
     zIndex: 100,
+    marginLeft: 15,
   },
   notificationBadgeIcon: {
     color: "#FF3250",
