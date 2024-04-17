@@ -8,7 +8,8 @@ export const POSTS = [
     likesCount: 7870,
     commentsCount: 2,
     sharesCount: 368,
-    caption: "Road trips are the best medicine.😌 \nWhat are your thoughts?",
+    caption:
+      "Road trips are the best medicine.😌 \n What are your thoughts?\n.\n.\n.\n.\n.\n.\n.\n#mountains #roadtrip #travel",
     comments: [
       {
         username: "indranil_kumar_",
@@ -28,7 +29,8 @@ export const POSTS = [
     likesCount: 203005,
     commentsCount: 4,
     sharesCount: 15497,
-    caption: "I just love watching sunsets as some relaxing music..😬🏖️",
+    caption:
+      "I just love watching sunsets as some relaxing music..😬🏖️\n\n\n\n.\n.\n.\n#sunset #beach #travel",
     comments: [
       {
         username: "indranil_kumar_",
@@ -47,7 +49,6 @@ export const POSTS = [
         comment: "Where's this place? 🤩",
       },
     ],
-    postTime: "12h",
   },
   {
     imageUrl: require("../assets/photos/postPhotos/post-photo3.jpg"),
@@ -56,7 +57,8 @@ export const POSTS = [
     likesCount: 15230,
     commentsCount: 1,
     sharesCount: 549,
-    caption: "I found peace in the mountains.🏔️✌🏻",
+    caption:
+      "I found peace in the mountains.🏔️✌🏻\n\n\n\n\n\n.\n.\n.\n#mountains #roadtrip #travel",
     comments: [
       {
         username: "indrani_kumar_",
@@ -67,6 +69,5 @@ export const POSTS = [
         comment: "Where's this place? 🤩",
       },
     ],
-    postTime: "3d",
   },
 ];

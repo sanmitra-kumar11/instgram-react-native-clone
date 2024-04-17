@@ -11,8 +11,9 @@ const PostHeader = ({ post }) => {
           resizeMode="contain"
         />
         <Text style={styles.profileName}>{post.userName}</Text>
+        <Text style={styles.postTime}>{post.postTime}</Text>
       </View>
-      <Text style={{ fontWeight: "bold" }}>...</Text>
+      <Text style={{ fontWeight: "bold", marginBottom: 5 }}>...</Text>
     </View>
   );
 };
@@ -37,6 +38,11 @@ const styles = StyleSheet.create({
   profileName: {
     fontWeight: "bold",
     marginLeft: 8,
+  },
+  postTime: {
+    fontWeight: 200,
+    marginLeft: 5,
+    color: "grey",
   },
 });
 

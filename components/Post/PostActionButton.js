@@ -1,7 +1,11 @@
 import { View, Text, Image, StyleSheet, TouchableOpacity } from "react-native";
-import React from "react";
+import React, { useState } from "react";
+import * as Haptics from "expo-haptics";
 
 const PostActionButton = ({ post }) => {
+  const [isLiked, setIsLiked] = useState(false);
+  const [isSaved, setIsSaved] = useState(false);
+
   let formatedLikesCount = post.likesCount;
   let formatedCommentsCount = post.commentsCount;
   let formatedSharesCount = post.sharesCount;
@@ -42,15 +46,40 @@ const PostActionButton = ({ post }) => {
     formatedSharesCount = formatedSharesCount.concat(" k");
   }
 
+  function likeHandler() {
+    if (isLiked) {
+      setIsLiked(false);
+    } else {
+      Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
+      setIsLiked(true);
+    }
+  }
+
+  function saveHandler() {
+    if (isSaved) {
+      setIsSaved(false);
+    } else {
+      Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
+      setIsSaved(true);
+    }
+  }
+
   return (
     <View style={styles.container}>
       <View style={styles.iconsOuterContainer}>
         <View style={styles.iconsInnerContainer}>
-          <TouchableOpacity>
-            <Image
-              source={require("../../assets/icons/icons-like-outline-2.png")}
-              style={styles.icons}
-            />
+          <TouchableOpacity onPress={likeHandler}>
+            {isLiked ? (
+              <Image
+                source={require("../../assets/icons/icons-like-filled-2.png")}
+                style={styles.icons}
+              />
+            ) : (
+              <Image
+                source={require("../../assets/icons/icons-like-outline-2.png")}
+                style={styles.icons}
+              />
+            )}
           </TouchableOpacity>
           <TouchableOpacity>
             <Text style={styles.counts}>{formatedLikesCount}</Text>
@@ -76,11 +105,18 @@ const PostActionButton = ({ post }) => {
         </View>
       </View>
       <View>
-        <TouchableOpacity>
-          <Image
-            source={require("../../assets/icons/icons-save-outline.png")}
-            style={styles.icons}
-          />
+        <TouchableOpacity onPress={saveHandler}>
+          {isSaved ? (
+            <Image
+              source={require("../../assets/icons/icons-save-filled.png")}
+              style={styles.icons}
+            />
+          ) : (
+            <Image
+              source={require("../../assets/icons/icons-save-outline.png")}
+              style={styles.icons}
+            />
+          )}
         </TouchableOpacity>
       </View>
     </View>
