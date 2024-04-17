@@ -3,18 +3,18 @@ import React from "react";
 import PostActionButton from "./PostActionButton";
 import Caption from "../Caption/Caption";
 
-const PostFooter = ({ post }) => {
+const PostFooter = ({ content }) => {
   return (
     <View>
-      <PostActionButton post={post} />
+      <PostActionButton content={content} />
       <View style={styles.captionContainer}>
         <Text>
-          <Text style={styles.captionUserName}>{post.userName}</Text>
-          {/* <Caption caption={post.caption} linesToTruncate={2} /> */}
-          <Text> {post.caption}</Text>
+          <Text style={styles.captionUserName}>{content.userName}</Text>
+          {/* <Caption caption={content.caption} linesToTruncate={2} /> */}
+          <Text> {content.caption}</Text>
         </Text>
       </View>
-      {post.comments.length > 0 && (
+      {content.comments.length > 0 && (
         <TouchableOpacity>
           <Text style={styles.viewCommentsBtn}>View all comments</Text>
         </TouchableOpacity>

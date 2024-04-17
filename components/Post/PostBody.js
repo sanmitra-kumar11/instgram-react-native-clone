@@ -2,11 +2,11 @@ import { View, StyleSheet, TouchableOpacity } from "react-native";
 import React from "react";
 import { Image } from "react-native-elements";
 
-const PostBody = ({ post }) => {
+const PostBody = ({ content }) => {
   return (
     <TouchableOpacity style={{ alignItems: "stretch" }}>
       <Image
-        source={post.imageUrl}
+        source={content.contentUrl}
         style={styles.postPhoto}
         resizeMode="cover"
       />

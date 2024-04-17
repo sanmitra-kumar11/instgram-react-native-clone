@@ -50,7 +50,6 @@ export const ICONS = [
 const Tab = createBottomTabNavigator();
 
 const FooterTab = ({ icons }) => {
-  const [activeTab, setActiveTab] = useState("Home");
   return (
     <Tab.Navigator
       screenOptions={{

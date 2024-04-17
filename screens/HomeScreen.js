@@ -3,20 +3,22 @@ import React from "react";
 import Header from "../components/HomeScreen/Header";
 import Post from "../components/Post/Post";
 import Stories from "../components/HomeScreen/Stories";
-import { POSTS } from "../data/posts";
+import { CONTENTS } from "../data/contents";
 
 const HomeScreen = () => {
   return (
-    <SafeAreaView>
+    <SafeAreaView style={{ backgroundColor: "white" }}>
       <View>
         <ScrollView
           showsVerticalScrollIndicator={false}
-          contentContainerStyle={{ paddingBottom: 10 }}
+          contentContainerStyle={{
+            paddingBottom: 10,
+          }}
         >
           <Header />
           <Stories />
-          {POSTS.map((post) => (
-            <Post key={post.userName} post={post} />
+          {CONTENTS.map((content) => (
+            <Post key={content.contentId} content={content} />
           ))}
         </ScrollView>
       </View>

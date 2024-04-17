@@ -1,17 +1,17 @@
 import { View, Text, StyleSheet, Image } from "react-native";
 import React from "react";
 
-const PostHeader = ({ post }) => {
+const PostHeader = ({ content }) => {
   return (
     <View style={styles.postHeaderContainer}>
       <View style={styles.profileContainer}>
         <Image
-          source={post.profilePhoto}
+          source={content.profilePhoto}
           style={styles.profileIcon}
           resizeMode="contain"
         />
-        <Text style={styles.profileName}>{post.userName}</Text>
-        <Text style={styles.postTime}>{post.postTime}</Text>
+        <Text style={styles.profileName}>{content.userName}</Text>
+        <Text style={styles.uploadTime}>{content.uploadTime}</Text>
       </View>
       <Text style={{ fontWeight: "bold", marginBottom: 5 }}>...</Text>
     </View>
@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     marginLeft: 8,
   },
-  postTime: {
+  uploadTime: {
     fontWeight: 200,
     marginLeft: 5,
     color: "grey",

@@ -2,44 +2,44 @@ import { View, Text, Image, StyleSheet, TouchableOpacity } from "react-native";
 import React, { useState } from "react";
 import * as Haptics from "expo-haptics";
 
-const PostActionButton = ({ post }) => {
+const PostActionButton = ({ content }) => {
   const [isLiked, setIsLiked] = useState(false);
   const [isSaved, setIsSaved] = useState(false);
 
-  let formatedLikesCount = post.likesCount;
-  let formatedCommentsCount = post.commentsCount;
-  let formatedSharesCount = post.sharesCount;
+  let formatedLikesCount = content.likesCount;
+  let formatedCommentsCount = content.commentsCount;
+  let formatedSharesCount = content.sharesCount;
 
-  if (post.likesCount > 10000 && post.likesCount < 100000) {
-    formatedLikesCount = post.likesCount / 1000;
+  if (content.likesCount > 10000 && content.likesCount < 100000) {
+    formatedLikesCount = content.likesCount / 1000;
     formatedLikesCount = formatedLikesCount.toPrecision(3);
     formatedLikesCount = formatedLikesCount.concat(" k");
-  } else if (post.likesCount > 100000) {
-    formatedLikesCount = post.likesCount / 1000;
+  } else if (content.likesCount > 100000) {
+    formatedLikesCount = content.likesCount / 1000;
     formatedLikesCount = formatedLikesCount.toPrecision(4).endsWith(0)
       ? formatedLikesCount.toPrecision(3)
       : formatedLikesCount.toPrecision(4);
     formatedLikesCount = formatedLikesCount.concat(" k");
   }
 
-  if (post.commentsCount > 10000 && post.commentsCount < 100000) {
-    formatedCommentsCount = post.commentsCount / 1000;
+  if (content.commentsCount > 10000 && content.commentsCount < 100000) {
+    formatedCommentsCount = content.commentsCount / 1000;
     formatedCommentsCount = formatedCommentsCount.toPrecision(3);
     formatedCommentsCount = formatedCommentsCount.concat(" k");
-  } else if (post.commentsCount > 100000) {
-    formatedCommentsCount = post.commentsCount / 1000;
+  } else if (content.commentsCount > 100000) {
+    formatedCommentsCount = content.commentsCount / 1000;
     formatedCommentsCount = formatedCommentsCount.toPrecision(4).endsWith(0)
       ? formatedCommentsCount.toPrecision(3)
       : formatedCommentsCount.toPrecision(4);
     formatedCommentsCount = formatedCommentsCount.concat(" k");
   }
 
-  if (post.sharesCount > 10000 && post.sharesCount < 100000) {
-    formatedSharesCount = post.sharesCount / 1000;
+  if (content.sharesCount > 10000 && content.sharesCount < 100000) {
+    formatedSharesCount = content.sharesCount / 1000;
     formatedSharesCount = formatedSharesCount.toPrecision(3);
     formatedSharesCount = formatedSharesCount.concat(" k");
-  } else if (post.sharesCount > 100000) {
-    formatedSharesCount = post.sharesCount / 1000;
+  } else if (content.sharesCount > 100000) {
+    formatedSharesCount = content.sharesCount / 1000;
     formatedSharesCount = formatedSharesCount.toPrecision(4).endsWith(0)
       ? formatedSharesCount.toPrecision(3)
       : formatedSharesCount.toPrecision(4);

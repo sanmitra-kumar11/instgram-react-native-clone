@@ -4,12 +4,12 @@ import PostHeader from "./PostHeader";
 import PostBody from "./PostBody";
 import PostFooter from "./PostFooter";
 
-const Post = ({ post }) => {
+const Post = ({ content }) => {
   return (
     <View>
-      <PostHeader post={post} />
-      <PostBody post={post} />
-      <PostFooter post={post} />
+      <PostHeader content={content} />
+      <PostBody content={content} />
+      <PostFooter content={content} />
     </View>
   );
 };
