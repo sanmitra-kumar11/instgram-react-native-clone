@@ -6,25 +6,41 @@ import {
   StyleSheet,
   ScrollView,
 } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import { SearchBar } from "react-native-elements";
 import GridsLayout from "../components/ExploreScreen/GridsLayout";
 import { EXPLORE_TAB_CONTENTS } from "../data/exploreTabContents";
+import { color } from "react-native-elements/dist/helpers";
 
 const ExploreScreen = () => {
+  const [searchKeyword, setSearchKeyword] = useState("");
+  const [placeHolderText, setPlaceHolderText] = useState("Search");
+  function onChangeTextHandler(keyword) {
+    setSearchKeyword(keyword);
+  }
+  function onCancelHandler() {
+    setSearchKeyword((keyword) => (keyword != "" ? "" : undefined));
+    setPlaceHolderText("Search");
+  }
   return (
     <SafeAreaView style={{ backgroundColor: "white" }}>
-      <ScrollView>
-        <View style={{ marginHorizontal: 15 }}>
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <View style={{ marginHorizontal: 10 }}>
           <SearchBar
             platform="ios"
             searchIcon={Platform.OS === "ios" ? { name: "search" } : null}
             clearIcon={Platform.OS === "ios" ? { name: "close-circle" } : null}
+            placeholder={placeHolderText}
+            value={searchKeyword}
+            onChangeText={onChangeTextHandler}
+            cancelButtonProps={{ color: "black" }}
+            autoCapitalize="none"
+            onCancel={onCancelHandler}
+            inputContainerStyle={{ height: 20, marginBottom: 3 }}
           />
         </View>
-        {EXPLORE_TAB_CONTENTS.map((gridsLayout) => (
-          <GridsLayout gridsLayout={gridsLayout.gridsLayout} />
-        ))}
+
+        <GridsLayout gridsLayout={EXPLORE_TAB_CONTENTS} />
       </ScrollView>
     </SafeAreaView>
   );

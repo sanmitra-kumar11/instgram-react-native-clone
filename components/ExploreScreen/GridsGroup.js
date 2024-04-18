@@ -4,14 +4,22 @@ import SmallSquareGrid from "./SmallSquareGrid";
 import RectangleGrid from "./RectangleGrid";
 import SquareGridGroup from "./SquareGridGroup";
 
-const GridsGroup = ({ stylesFlex, gridsGroup }) => {
+const GridsGroup = ({ stylesFlex, gridsGroup, stylesGrid }) => {
   return (
     <View style={stylesFlex}>
-      {gridsGroup.map((grids) =>
+      {gridsGroup.map((grids, key) =>
         grids.gridType === "RECTANGLE" ? (
-          <RectangleGrid grids={grids.rectangleGrid} />
+          <RectangleGrid
+            key={key}
+            grids={grids.rectangleGrid}
+            stylesGrid={stylesGrid}
+          />
         ) : (
-          <SquareGridGroup grids={grids.squareGrid} />
+          <SquareGridGroup
+            key={key}
+            grids={grids.squareGrid}
+            stylesGrid={stylesGrid}
+          />
         )
       )}
     </View>

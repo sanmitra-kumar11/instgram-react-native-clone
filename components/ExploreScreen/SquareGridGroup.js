@@ -2,17 +2,18 @@ import { View, Text } from "react-native";
 import React from "react";
 import SmallSquareGrid from "./SmallSquareGrid";
 
-const SquareGridGroup = ({ grids }) => {
+const SquareGridGroup = ({ grids, stylesGrid }) => {
   return (
-    <View>
-      {grids.map((grid) => (
+    <View style={stylesGrid}>
+      {grids.map((grid, key) => (
         <SmallSquareGrid
+          key={key}
           viewStyles={{
-            backgroundColor: "pink",
             height: 131,
             width: 131,
           }}
           grid={grid}
+          stylesGrid={stylesGrid}
         />
       ))}
     </View>
