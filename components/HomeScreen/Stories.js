@@ -13,11 +13,7 @@ import { LinearGradient } from "expo-linear-gradient";
 const Stories = () => {
   return (
     <View style={styles.container}>
-      <ScrollView
-        horizontal
-        showsHorizontalScrollIndicator={false}
-        contentContainerStyle={{ justifyContent: "space-evenly" }}
-      >
+      <ScrollView horizontal showsHorizontalScrollIndicator={false}>
         <View style={styles.storiesContainer}>
           <TouchableOpacity>
             <Image

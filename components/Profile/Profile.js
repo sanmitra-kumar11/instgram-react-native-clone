@@ -1,9 +1,10 @@
-import { View, Text, TouchableOpacity, Image, StyleSheet } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 import React from "react";
 import ProfileMetrics from "./ProfileMetrics";
 import ProfileBio from "./ProfileBio";
 import ProfileButton from "./ProfileButton";
 import ProfilePhoto from "./ProfilePhoto";
+import ProfileHighlights from "./ProfileHighlights";
 
 const Profile = ({ user }) => {
   return (
@@ -43,6 +44,7 @@ const Profile = ({ user }) => {
           />
         </View>
       </View>
+      <ProfileHighlights user={user} />
     </>
   );
 };

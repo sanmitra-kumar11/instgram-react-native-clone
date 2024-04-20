@@ -9,7 +9,9 @@ import React from "react";
 
 const ProfileBio = ({ user }) => {
   let profileBioLink = user.profileBioLinks.url;
-  profileBioLink = profileBioLink.substring(8, profileBioLink.length);
+  if (profileBioLink !== "") {
+    profileBioLink = profileBioLink.substring(8, profileBioLink.length);
+  }
   function openLink(url) {
     Linking.openURL(url);
   }
