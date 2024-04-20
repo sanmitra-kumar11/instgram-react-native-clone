@@ -46,13 +46,4 @@ const ExploreScreen = () => {
   );
 };
 
-const styles = StyleSheet.create({
-  box: {
-    backgroundColor: "red",
-    height: 140,
-    width: 140,
-    textAlign: "center",
-  },
-});
-
 export default ExploreScreen;

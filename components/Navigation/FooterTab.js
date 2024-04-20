@@ -30,8 +30,8 @@ export const ICONS = [
   {
     tabName: "NewPost",
     component: NewPostScreen,
-    active: require("../../assets/icons/icons-add-new-filled.png"),
-    inActive: require("../../assets/icons/icons-add-new-outline.png"),
+    active: require("../../assets/icons/icons-add-new-filled-2.png"),
+    inActive: require("../../assets/icons/icons-add-new-outline-2.png"),
   },
   {
     tabName: "Reels",
