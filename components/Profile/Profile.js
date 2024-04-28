@@ -5,6 +5,8 @@ import ProfileBio from "./ProfileBio";
 import ProfileButton from "./ProfileButton";
 import ProfilePhoto from "./ProfilePhoto";
 import ProfileHighlights from "./ProfileHighlights";
+import ProfileTab from "../Navigation/ProfileTab";
+import { PROFILE_TAB_ICONS } from "../../data/profileTabIcons";
 
 const Profile = ({ user }) => {
   return (
@@ -45,6 +47,7 @@ const Profile = ({ user }) => {
         </View>
       </View>
       <ProfileHighlights user={user} />
+      {/* <ProfileTab icons={PROFILE_TAB_ICONS} /> */}
     </>
   );
 };

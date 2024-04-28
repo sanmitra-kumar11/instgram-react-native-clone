@@ -6,7 +6,7 @@ const ProfileHighlights = ({ user }) => {
     <ScrollView
       horizontal
       showsHorizontalScrollIndicator={false}
-      contentContainerStyle={{ flex: 1 }}
+      contentContainerStyle={{ flex: 1, marginBottom: 10 }}
     >
       <View
         style={{
@@ -18,7 +18,10 @@ const ProfileHighlights = ({ user }) => {
         }}
       >
         {user.profileHighlights.map((highlight) => (
-          <View style={{ alignItems: "center", marginLeft: -10 }}>
+          <View
+            key={highlight.highlightId}
+            style={{ alignItems: "center", marginLeft: -10 }}
+          >
             <TouchableOpacity
               style={{
                 height: 65,

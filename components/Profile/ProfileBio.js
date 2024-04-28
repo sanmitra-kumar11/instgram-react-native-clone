@@ -4,6 +4,7 @@ import {
   Pressable,
   Image,
   TouchableOpacity,
+  Linking,
 } from "react-native";
 import React from "react";
 
@@ -60,6 +61,7 @@ const styles = StyleSheet.create({
   textFormat: {
     flexWrap: "wrap",
     lineHeight: 20,
+    marginRight: 20,
   },
 });
 
